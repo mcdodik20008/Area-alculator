@@ -11,6 +11,6 @@ public class Circle : Body
 
     public override double GetArea()
     {
-        throw new NotImplementedException();
+        return Math.Pow(radius, 2) * Math.PI;
     }
 }

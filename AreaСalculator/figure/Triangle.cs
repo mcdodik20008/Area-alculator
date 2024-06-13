@@ -13,7 +13,7 @@ public class Triangle : Body
 
     public override double GetArea()
     {
-        if (IsCorrect())
+        if (!IsCorrect())
         {
             throw new InvalidOperationException("Невозможно рассчитать площадь треугольника - длинна одной стороны больше или равна сумме длин других сторон. \n");
         }
@@ -31,30 +31,15 @@ public class Triangle : Body
     /**
      * Сумма двух сторон меньше самой длинной 
      */
-    private bool IsCorrect()
+    public bool IsCorrect()
     {
         return sides[2] < sides[0] + sides[1];
     }
 
     /**
-     * Получаем гипотенузу + проверяем прямоугольный ли треугольник
-     */
-    private double GetHypotenuse()
-    {
-        if (IsRightTriangle())
-        {
-            return sides[2];
-        }
-        else
-        {
-            throw new InvalidOperationException("Невозможно получить гипотенузу у не прямоугольного треугольника. \n");
-        }
-    }
-
-    /**
      * Прямоугольный, если сумма квадратов двух сторон == квадрату самой длинной стороны
      */
-    private bool IsRightTriangle()
+    public bool IsRightTriangle()
     {
         return Math.Pow(sides[2], 2) == Math.Pow(sides[1], 2) + Math.Pow(sides[0], 2);
     }
