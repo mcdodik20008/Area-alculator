@@ -35,11 +35,8 @@ namespace AreaCalculatorTest
         [Test]
         public void IsntCorrectTriangle()
         {
-            Triangle triangle = new(5, 5, 5);
+            Triangle triangle = new(50, 5, 5);
             ClassicAssert.IsFalse(triangle.IsCorrect());
-            double area = calculator.CalculateArea(triangle);
-            Console.WriteLine(triangle.GetArea());
-            Assert.Throws<InvalidOperationException>(() => throw new InvalidOperationException());
         }
 
         [Test]

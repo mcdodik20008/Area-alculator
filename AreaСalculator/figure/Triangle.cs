@@ -23,7 +23,7 @@ public class Triangle : Body
             return sides[0] * sides[1] / 2;
         }
 
-        double p = GetSquare();
+        double p = GetSquare()/2;
         double powArea = p * (p - sides[0]) * (p - sides[1]) * (p - sides[2]);
         return Math.Sqrt(powArea);
     }
