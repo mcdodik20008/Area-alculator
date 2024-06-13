@@ -37,21 +37,6 @@ public class Triangle : Body
     }
 
     /**
-     * Получаем гипотенузу + проверяем прямоугольный ли треугольник
-     */
-    private double GetHypotenuse()
-    {
-        if (IsRightTriangle())
-        {
-            return sides[2];
-        }
-        else
-        {
-            throw new InvalidOperationException("Невозможно получить гипотенузу у не прямоугольного треугольника. \n");
-        }
-    }
-
-    /**
      * Прямоугольный, если сумма квадратов двух сторон == квадрату самой длинной стороны
      */
     private bool IsRightTriangle()
